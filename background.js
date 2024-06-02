@@ -5,10 +5,11 @@ chrome.tabs.onUpdated.addListener((tabId, tab) => {
     //Grabs all the params of a youtube video, which is ideally unique
     const urlParameters = new URLSearchParams(queryParameters);
 
+    console.log(urlParameters);
     chrome.tabs.sendMessage(tabId, {
       type: "NEW",
       videoId: urlParameters.get("v"),
-      random: "random",
+      // random: "random",
     });
   }
 });
